@@ -41,6 +41,7 @@ class Newspaper_Index_Plugin {
 
     // action hooks
     add_action('init', array($this, 'init'));
+    add_action('wp_head', array($this, 'output_public_css'));
 
     // filter hooks
     //add_filter('archive_template', array($this, 'filter_archive_template'));
@@ -72,12 +73,12 @@ class Newspaper_Index_Plugin {
    * Ouputs css to be used on public pages for this plugin
    *
    * @wp-hook wp_head
+   */
   function output_public_css() {
     echo '<style>';
     readfile(dirname( __FILE__ ) . '/css/public.css');
     echo '</style>';
   }
-  */
 
   /**
    * Return the template file used to display a single post
