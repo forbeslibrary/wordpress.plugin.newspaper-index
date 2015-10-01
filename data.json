@@ -1,0 +1,41 @@
+{
+  "post_type": "index_cards",
+  "custom_fields": {
+    "headline": "text",
+    "date": "date",
+    "page": "text",
+    "keywords": "text",
+    "annotation": "textarea",
+    "photo": "checkbox"
+  },
+  "post_type_data": {
+    "labels": {
+      "name": "Index Cards",
+      "singular_name": "Index Card",
+      "add_new": "Add New",
+      "add_new_item": "Add New Index Card",
+      "edit_item": "Edit Index Card",
+      "new_item": "New Index Card",
+      "view_item": "View Index Card",
+      "search_items": "Search Index Cards",
+      "not_found": "Nothing found",
+      "not_found_in_trash": "Nothing found in Trash",
+      "parent_item_colon": ""
+    },
+    "public": true,
+    "publicly_queryable": true,
+    "show_ui": true,
+    "query_var": true,
+    "rewrite": {
+      "with_front": false
+    },
+    "capability_type": "post",
+    "has_archive": true,
+    "hierarchical": false,
+    "menu_icon": "dashicons-index-card",
+    "menu_position": 5,
+    "supports": [
+      "revisions"
+    ]
+  }
+}
