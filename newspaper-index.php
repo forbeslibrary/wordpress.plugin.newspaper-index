@@ -28,6 +28,7 @@ class Newspaper_Index_Plugin {
   public function load_dependencies() {
     if ( is_admin() ) {
       require_once(dirname( __FILE__ ) . '/admin.php');
+      new Newspaper_Index_Admin($this);
     }
   }
 
@@ -136,6 +137,29 @@ class Newspaper_Index_Plugin {
     return $title;
   }
   */
+
+  function get_metadata_table($post) {
+    $custom = get_post_custom($post->ID);
+    if (isset($custom[$this->data['post_type']])) {
+      $metadata = maybe_unserialize(
+        $custom[$this->data['post_type']][0]
+      );
+    } else {
+      $metadata = array();
+    }
+    ob_start();
+    ?>
+    <table>
+      <?php foreach($metadata as $field_name => $content): ?>
+        <tr>
+          <th><?php echo $field_name; ?></th>
+          <td><?php echo $content; ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </table>
+    <?php
+    return ob_get_contents();
+  }
 }
 // create a plugin instance to load the plugin
-new Newspaper_Index_Plugin();
+$newspaper_index_plugin = new Newspaper_Index_Plugin();
