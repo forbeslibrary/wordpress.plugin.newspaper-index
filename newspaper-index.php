@@ -148,18 +148,10 @@ class Newspaper_Index_Plugin {
       $metadata = array();
     }
     ob_start();
-    ?>
-    <table>
-      <?php foreach($metadata as $field_name => $content): ?>
-        <tr>
-          <th><?php echo $field_name; ?></th>
-          <td><?php echo $content; ?></td>
-        </tr>
-      <?php endforeach; ?>
-    </table>
-    <?php
+    include(dirname( __FILE__ ) . '/templates/index-card.php');
     return ob_get_contents();
   }
+
 }
 // create a plugin instance to load the plugin
 $newspaper_index_plugin = new Newspaper_Index_Plugin();
