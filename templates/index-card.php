@@ -9,7 +9,7 @@ if (isset($custom['index_cards'])) {
 }
 $date = $newDate = date("F j, Y", strtotime($metadata['date']));
 ?>
-<table>
+<table class="index_card">
   <tr>
     <th>headline</th>
     <td><?php echo $metadata['headline']; ?></td>
@@ -18,9 +18,7 @@ $date = $newDate = date("F j, Y", strtotime($metadata['date']));
     <th>source</th>
     <td>
       Daily Hampshire Gazette (Northampton, MA)<br>
-      <b>
-        <?php echo $date; ?>,
-        p. <?php echo $metadata['page']; ?>
+      <b><?php echo $date; ?>, p. <?php echo $metadata['page']; ?>
       </b>
     </td>
   </tr>
