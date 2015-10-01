@@ -52,6 +52,7 @@ class Newspaper_Index_Admin {
         array(
           'ID'=>$post->ID,
           'post_content' => $this->plugin->get_metadata_table($post),
+          'post_excerpt' => $this->plugin->get_metadata_table($post),
           'post_title' => ($custom_fields['headline'] ? $custom_fields['headline'] : '[no headline]')
         )
       );
