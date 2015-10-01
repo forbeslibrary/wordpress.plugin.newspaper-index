@@ -7,14 +7,29 @@ if (isset($custom['index_cards'])) {
 } else {
   $metadata = array();
 }
+$date = $newDate = date("F j, Y", strtotime($metadata['date']));
 ?>
-<h2><?php echo $metadata['headline']; ?></h2>
 <table>
-  <?php foreach($metadata as $field_name => $content): ?>
-    <tr>
-      <th><?php echo $field_name; ?></th>
-      <td><?php echo $content; ?></td>
-    </tr>
-  <?php endforeach; ?>
+  <tr>
+    <th>headline</th>
+    <td><?php echo $metadata['headline']; ?></td>
+  </tr>
+  <tr>
+    <th>source</th>
+    <td>
+      Daily Hampshire Gazette (Northampton, MA)<br>
+      <b>
+        <?php echo $date; ?>,
+        p. <?php echo $metadata['page']; ?>
+      </b>
+    </td>
+  </tr>
+  <tr>
+    <th>summary</th>
+    <td><?php echo $metadata['annotation']; ?></td>
+  </tr>
+  <tr>
+    <th>keywords</th>
+    <td><?php echo $metadata['keywords']; ?></td>
+  </tr>
 </table>
-</div>
