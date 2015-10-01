@@ -12,7 +12,7 @@ $date = $newDate = date("F j, Y", strtotime($metadata['date']));
 <table class="index_card">
   <tr>
     <th>headline</th>
-    <td><?php echo $metadata['headline']; ?></td>
+    <td class="headline"><?php echo $metadata['headline']; ?></td>
   </tr>
   <tr>
     <th>source</th>
